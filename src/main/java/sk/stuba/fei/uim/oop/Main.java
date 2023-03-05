@@ -31,21 +31,21 @@ public class Main {
         student.add(new Student(204,"Peter","Balaz",22));
         student.add(new Student(404,"Juraj","Lepak",24));
 
-        Collections.sort(student, new SortByName());
+        System.out.println("Vyber vhodnu moznost:\n");
+        System.out.println("Ak chces zoznam zoradit podla ID zhora dole stlac:1");
+        System.out.println("Ak chces zoznam zoradit podla ID zdola hore stlac:2");
+        System.out.println("Ak chces zoznam zoradit podla mena abecedne stlac:3");
+        System.out.println("Ak chces zoznam zoradit podla mena abecednhe ale od konca stlac:4");
+        System.out.println("Ak chces zoznam zoradit podla priezviska abecedne stlac:5");
+        System.out.println("Ak chces zoznam zoradit podla priezviska abecednhe ale od konca stlac:6");
+        System.out.println("Ak chces zoznam zoradit podla veku zhora dole stlac:7");
+        System.out.println("Ak chces zoznam zoradit podla veku zdola hore stlac:8");
 
+
+        Collections.sort(student, new SortByName());
         for (int i = 0; i < student.size(); i++)
             System.out.println(student.get(i));
 
-//        for (int i = 0; i < 5; i++) {
-//            System.out.println(student[i].getMeno() +"   "+ student[i].getPriezvisko()  +"   "+ student[i].getVek() +"   "+ student[i].getID());
-//        }
-
-//        String[] pole = new String[5];
-//        System.out.println();
-//        for (int i = 0; i < 5; i++) {
-//            pole[i]= student[i].getMeno();
-//        }
-//        Arrays.sort(pole);
-//        System.out.println(Arrays.toString(pole));
+//
     }
 }
