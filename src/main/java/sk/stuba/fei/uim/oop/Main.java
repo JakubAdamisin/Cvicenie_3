@@ -32,20 +32,67 @@ public class Main {
         student.add(new Student(404,"Juraj","Lepak",24));
 
         System.out.println("Vyber vhodnu moznost:\n");
-        System.out.println("Ak chces zoznam zoradit podla ID zhora dole stlac:1");
-        System.out.println("Ak chces zoznam zoradit podla ID zdola hore stlac:2");
+        System.out.println("Ak chces zoznam zoradit podla ID zdola hore stlac:1");
+        System.out.println("Ak chces zoznam zoradit podla ID zhora dole stlac:2");
         System.out.println("Ak chces zoznam zoradit podla mena abecedne stlac:3");
         System.out.println("Ak chces zoznam zoradit podla mena abecednhe ale od konca stlac:4");
         System.out.println("Ak chces zoznam zoradit podla priezviska abecedne stlac:5");
         System.out.println("Ak chces zoznam zoradit podla priezviska abecednhe ale od konca stlac:6");
-        System.out.println("Ak chces zoznam zoradit podla veku zhora dole stlac:7");
-        System.out.println("Ak chces zoznam zoradit podla veku zdola hore stlac:8");
+        System.out.println("Ak chces zoznam zoradit podla veku zdola hore stlac:7");
+        System.out.println("Ak chces zoznam zoradit podla veku zhora dole stlac:8");
+        int a = KeyboardInput.readInt();
 
-
-        Collections.sort(student, new SortByName());
-        for (int i = 0; i < student.size(); i++)
-            System.out.println(student.get(i));
-
-//
+        switch (a) {
+            case 1: {
+                Collections.sort(student, new SortByID());
+                for (int i = 0; i < student.size(); i++)
+                    System.out.println(student.get(i));
+                break;
+            }
+            case 2: {
+                Collections.sort(student, new SortByID());
+                for (int i = student.size() - 1; i >= 0; i--)
+                    System.out.println(student.get(i));
+                break;
+            }
+            case 3: {
+                Collections.sort(student, new SortByName());
+                for (int i = 0; i < student.size(); i++)
+                    System.out.println(student.get(i));
+                break;
+            }
+            case 4: {
+                Collections.sort(student, new SortByName());
+                for (int i = student.size()-1; i >= 0; i--)
+                    System.out.println(student.get(i));
+                break;
+            }
+            case 5: {
+                Collections.sort(student, new SortBySurename());
+                for (int i = 0; i < student.size(); i++)
+                    System.out.println(student.get(i));
+                break;
+            }
+            case 6: {
+                Collections.sort(student, new SortBySurename());
+                for (int i = student.size()-1; i >= 0; i--)
+                    System.out.println(student.get(i));
+                break;
+            }
+            case 7: {
+                Collections.sort(student, new SortByVek());
+                for (int i = 0; i < student.size(); i++)
+                    System.out.println(student.get(i));
+                break;
+            }
+            case 8: {
+                Collections.sort(student, new SortByVek());
+                for (int i = student.size() - 1; i >= 0; i--)
+                    System.out.println(student.get(i));
+                break;
+            }
+            default:
+                System.out.println("Zle si zvolil cislo:");
+        }
     }
 }
